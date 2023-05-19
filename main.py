@@ -57,7 +57,7 @@ for i in range(len(dir_list)):
 dir1 = sorted(dir1)
 for i in range(len(dir1)):
   d = dir1[i].strftime("%d%b%Y")
-  fin = 'cm'+d.upper()+'bhav.csv'
+  fin = 'Test/cm'+d.upper()+'bhav.csv'
   dir2.append(fin)
 dir_list = dir2
 dir_list.reverse()
