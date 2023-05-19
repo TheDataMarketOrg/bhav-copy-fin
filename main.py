@@ -18,7 +18,7 @@ def down(URL):
   except:
     return 0
 
-# os.makedirs("Test")
+os.makedirs("Test")
 year = ['MAY']
 month = ['2023']
 print('downloading......')
@@ -29,7 +29,7 @@ for p in month:
                 year = p
                 dt = str(i) + j + year
                 # print(dt)
-                if str(dt) == '31MAY2023':
+                if str(dt) == '20MAY2023':
                     break
                 if i < 10:
                     str1 = 'cm0' + dt +'bhav.csv.zip'
