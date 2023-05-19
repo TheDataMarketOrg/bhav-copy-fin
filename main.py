@@ -81,6 +81,7 @@ d4 = today.strftime('%b-%d-%Y')
 filename = str(d4) + '.csv'
 df2.to_csv(filename)
 print('Process completed... file generated ', filename)
+print(dir_list)
 for f in dir_list:
     os.remove(f)
 print("source files deleted...")
