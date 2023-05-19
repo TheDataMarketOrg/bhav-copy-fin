@@ -19,8 +19,11 @@ def down(URL):
     return 0
 
 os.makedirs("Test")
-year = ['MAY']
-month = ['2023']
+dt = datetime.now()
+year = [str(dt.strftime("%b")).upper()]
+month = [str(dt.strftime("%Y")).upper()]
+stopDt = str(int(dt.strftime("%d")) + 1) +year[0] + month[0]
+print(stopDt)
 print('downloading......')
 for p in month:
     for j in year:
@@ -29,7 +32,7 @@ for p in month:
                 year = p
                 dt = str(i) + j + year
                 # print(dt)
-                if str(dt) == '20MAY2023':
+                if str(dt) == str(stopDt):
                     break
                 if i < 10:
                     str1 = 'cm0' + dt +'bhav.csv.zip'
@@ -77,7 +80,7 @@ for i in dir_list:
 
 #save file
 today = date.today()
-d4 = today.strftime('%b-%d-%Y')
+d4 = today.strftime('%b%Y')
 filename = str(d4) + '.csv'
 df2.to_csv(filename)
 print('Process completed... file generated ', filename)
