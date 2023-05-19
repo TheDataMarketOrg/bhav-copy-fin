@@ -18,7 +18,7 @@ def down(URL):
   except:
     return 0
 
-os.makedirs("Test")
+# os.makedirs("Test")
 year = ['MAY']
 month = ['2023']
 print('downloading......')
@@ -57,7 +57,7 @@ for i in range(len(dir_list)):
 dir1 = sorted(dir1)
 for i in range(len(dir1)):
   d = dir1[i].strftime("%d%b%Y")
-  fin = 'Test/cm'+d.upper()+'bhav.csv'
+  fin = 'cm'+d.upper()+'bhav.csv'
   dir2.append(fin)
 dir_list = dir2
 dir_list.reverse()
@@ -82,9 +82,11 @@ filename = str(d4) + '.csv'
 df2.to_csv(filename)
 print('Process completed... file generated ', filename)
 print(dir_list)
-for f in dir_list:
+dir_list_del = ['Test/'+ i for i in dir_list]
+for f in dir_list_del:
     os.remove(f)
 print("source files deleted...")
+os.rmdir("Test")
 
 #add market cap at column
 #add current price column
